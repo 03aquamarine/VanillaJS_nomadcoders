@@ -1,13 +1,8 @@
+const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector("#login-form button");
 
-function onLoginBtnClick() {
-  const username = loginInput.value;
-  if (username === "") {
-    alert("Please write your name");
-  } else if (username.length > 15) {
-    alert("Your name is too long.");
-  }
+function onLoginSubmit(event) {
+  event.preventDefault(); // 어떤 event의 기본 행동이든지 발생하지 않도록 막음
+  console.log(loginInput.value);
 }
-
-loginButton.addEventListener("click", onLoginBtnClick);
+loginForm.addEventListener("submit", onLoginSubmit);
